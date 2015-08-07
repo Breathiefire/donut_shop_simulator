@@ -1,0 +1,49 @@
+
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <script type="text/javascript">
+
+                                //Properties to represent the following data attributes (Links to an external site.) of each location.
+                			var store = function(hrOfOpp, minCustHr, maxCustHr, donutPerCust) {
+                				this.hour = hrOfOpp;
+                                this.min = minCustHr;
+                                this.max = maxCustHr;
+                                this.donut = donutPerCust; 
+                                this.total = function() {
+                                    var donutPerDay = 0;
+                                    for (var hr = 1; hr <= this.hour; hr++) {
+                                        var donutPerHr = this.getRandomArbitrary() * this.donut;
+                                        donutPerDay += donutPerHr;
+                                        console.log(donutPerHr + " are the donuts per hour.");
+                                    }
+                                    console.log(donutPerDay + " are the donuts per day.");
+                                }
+                               
+                                this.getRandomArbitrary = function() {
+                                    return Math.floor(Math.random() * (this.max - this.min)) + this.min;
+                                }
+                                
+                				    }
+                				
+                		  	var Downtown = new store(8, 8, 43, 4.5);
+                            var CapitolHill  = new store(24, 4, 37, 2);
+                            var SouthLakeUnion = new store(10, 9, 23, 6.33);
+                            var Wedgewood = new store(7, 2, 28, 1.25);
+                            var Ballard = new store(10, 8, 58, 3.75); 
+                            Downtown.total();
+                            CapitolHill.total();
+                            SouthLakeUnion.total();
+                            Wedgewood.total();
+                            Ballard.total();
+
+
+        </script>
+                		
+
+            </script>
+        </head>
+        <body>
+        </body>
+    </html>
